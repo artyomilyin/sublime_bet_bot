@@ -1,10 +1,11 @@
 import logging
+import os
+
 from aiogram import executor
 
 from handlers.handlers import dp
-from conf import local
 
-DEBUG = getattr(local, 'LOCAL_DEBUG', False)
+DEBUG = os.environ.get('LOCAL_DEBUG', False)
 logging_level = logging.DEBUG if DEBUG else logging.INFO
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                      level=logging_level)
