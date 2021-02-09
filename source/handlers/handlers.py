@@ -1,8 +1,8 @@
 from aiogram import Bot, Dispatcher, types
-from conf.local import LOCAL_API_TOKEN
+import os
 
 
-API_TOKEN = LOCAL_API_TOKEN
+API_TOKEN = os.environ.get('BOT_API_TOKEN')
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
