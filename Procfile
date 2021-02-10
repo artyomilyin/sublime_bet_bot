@@ -1,1 +1,0 @@
-worker: python /app/source/run.py
